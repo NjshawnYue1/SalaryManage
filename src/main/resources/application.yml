@@ -2,5 +2,14 @@ spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
+  datasource:
+    hikari:
+      username: root
+      password: 951209
+
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
 server:
   port: 8888
