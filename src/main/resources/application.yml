@@ -6,6 +6,15 @@ spring:
     hikari:
       username: root
       password: 951209
+    url: jdbc:mysql://localhost:3306/mydb?useUnicode=true&characterEncoding=utf8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  redis:
+    host: localhost
+    # host: 112.124.24.139
+    database: 0
+    timeout: 1000
+  # password:
 
   devtools:
     restart:
@@ -13,3 +22,10 @@ spring:
       additional-paths: src/main/java
 server:
   port: 8888
+mybatis:
+  type-aliases-package: com.usts.salarymanage.model
+  mapper-locations: classpath:mapper/*.xml
+mybatis-plus:
+  global-config:
+    # 关闭banner
+    banner: false

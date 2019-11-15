@@ -6,7 +6,7 @@ import lombok.Data;
 
 /**
  * @author shawnyue
- *
+ * <p>
  * 统一的响应结构
  */
 @Data
