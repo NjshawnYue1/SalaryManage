@@ -27,4 +27,6 @@ public interface TblSalaryDao {
     int updateByPrimaryKeySelective(Salary record);
 
     int updateByPrimaryKey(Salary record);
+
+    Salary selectByEmpId(Integer id);
 }

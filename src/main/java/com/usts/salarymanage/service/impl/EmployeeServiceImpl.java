@@ -1,19 +1,13 @@
 package com.usts.salarymanage.service.impl;
 
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
-import com.usts.salarymanage.mapper.TblCareerDao;
-import com.usts.salarymanage.mapper.TblDepartmentDao;
 import com.usts.salarymanage.mapper.TblEmployeeDao;
 import com.usts.salarymanage.model.Employee;
-import com.usts.salarymanage.model.Page;
-import com.usts.salarymanage.model.TblCareer;
-import com.usts.salarymanage.model.TblDepartment;
 import com.usts.salarymanage.service.EmployeeService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -51,25 +45,38 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee queryOneEmp(int id) {
+        Employee employee = tblEmployeeDao.selectByPrimaryKey(id);
+        if(employee == null){
+            return new Employee();
+        }
         return tblEmployeeDao.selectByPrimaryKey(id);
     }
 
     @Override
     public List<Employee> queryAllEmp() {
 
-
+        List<Employee> employeeList = tblEmployeeDao.selectByExample(null);
+        if (employeeList.size() == 0) {
+            return new ArrayList<Employee>();
+        }
         return tblEmployeeDao.selectByExample(null);
     }
 
     @Override
     public List<Employee> queryByCareerId(int careerId) {
-
+        List<Employee> employeeList = tblEmployeeDao.selectByDepartmentId(careerId);
+        if (employeeList.size() == 0) {
+            return new ArrayList<Employee>();
+        }
         return tblEmployeeDao.selectByCareerId(careerId);
     }
 
     @Override
     public List<Employee> queryByDepartmentId(int departmentId) {
-
+        List<Employee> employeeList = tblEmployeeDao.selectByDepartmentId(departmentId);
+        if (employeeList.size() == 0) {
+            return new ArrayList<Employee>();
+        }
         return tblEmployeeDao.selectByDepartmentId(departmentId);
     }
 }

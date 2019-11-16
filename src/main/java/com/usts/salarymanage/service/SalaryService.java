@@ -50,4 +50,11 @@ public interface SalaryService {
      * @return
      */
     List<Salary> queryAll();
+
+    /**
+     * 根据员工id查询薪资
+     * @param id
+     * @return
+     */
+    Salary queryByEmpId(int id);
 }

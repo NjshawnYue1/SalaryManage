@@ -48,4 +48,10 @@ public class SalaryServiceImpl implements SalaryService {
     public List<Salary> queryAll() {
         return tblSalaryDao.selectByExample(null);
     }
+
+    @Override
+    public Salary queryByEmpId(int employeeId) {
+
+        return tblSalaryDao.selectByEmpId(employeeId);
+    }
 }
