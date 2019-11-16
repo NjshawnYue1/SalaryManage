@@ -28,6 +28,7 @@ public class AjaxResponse {
     /**
      * 请求结果数据
      */
+    @ApiModelProperty("返回的数据")
     private Object data;
 
 

@@ -1,0 +1,159 @@
+2019-11-16 14:45:33,641 [restartedMain] INFO  [com.usts.salarymanage.SalarymanageApplication] StartupInfoLogger.java:55 - Starting SalarymanageApplication on gadeMacBook-Pro.local with PID 8935 (/Users/shawnyue/IdeaProjects/SalaryManage/target/classes started by shawnyue in /Users/shawnyue/IdeaProjects/SalaryManage)
+2019-11-16 14:45:33,644 [restartedMain] INFO  [com.usts.salarymanage.SalarymanageApplication] SpringApplication.java:651 - No active profile set, falling back to default profiles: default
+2019-11-16 14:45:33,681 [restartedMain] INFO  [o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor] DeferredLog.java:225 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-11-16 14:45:33,681 [restartedMain] INFO  [o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor] DeferredLog.java:225 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-11-16 14:45:34,363 [restartedMain] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:246 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-16 14:45:34,365 [restartedMain] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-16 14:45:34,384 [restartedMain] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:184 - Finished Spring Data repository scanning in 8ms. Found 0 repository interfaces.
+2019-11-16 14:45:34,644 [restartedMain] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-16 14:45:35,070 [restartedMain] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:92 - Tomcat initialized with port(s): 8888 (http)
+2019-11-16 14:45:35,078 [restartedMain] INFO  [org.apache.catalina.core.StandardService] DirectJDKLog.java:173 - Starting service [Tomcat]
+2019-11-16 14:45:35,078 [restartedMain] INFO  [org.apache.catalina.core.StandardEngine] DirectJDKLog.java:173 - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-11-16 14:45:35,144 [restartedMain] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring embedded WebApplicationContext
+2019-11-16 14:45:35,144 [restartedMain] INFO  [org.springframework.web.context.ContextLoader] ServletWebServerApplicationContext.java:284 - Root WebApplicationContext: initialization completed in 1463 ms
+2019-11-16 14:45:36,021 [restartedMain] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-16 14:45:36,073 [restartedMain] INFO  [o.s.b.d.autoconfigure.OptionalLiveReloadServer] OptionalLiveReloadServer.java:58 - LiveReload server is running on port 35729
+2019-11-16 14:45:36,401 [restartedMain] INFO  [s.d.s.web.plugins.DocumentationPluginsBootstrapper] DocumentationPluginsBootstrapper.java:120 - Context refreshed
+2019-11-16 14:45:36,414 [restartedMain] INFO  [s.d.s.web.plugins.DocumentationPluginsBootstrapper] DocumentationPluginsBootstrapper.java:123 - Found 1 custom documentation plugin(s)
+2019-11-16 14:45:36,424 [restartedMain] INFO  [s.d.spring.web.scanners.ApiListingReferenceScanner] ApiListingReferenceScanner.java:41 - Scanning for api listing references
+2019-11-16 14:45:36,581 [restartedMain] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:204 - Tomcat started on port(s): 8888 (http) with context path ''
+2019-11-16 14:45:36,584 [restartedMain] INFO  [com.usts.salarymanage.SalarymanageApplication] StartupInfoLogger.java:61 - Started SalarymanageApplication in 3.414 seconds (JVM running for 4.058)
+2019-11-16 14:46:47,748 [http-nio-8888-exec-2] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-11-16 14:46:47,748 [http-nio-8888-exec-2] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:525 - Initializing Servlet 'dispatcherServlet'
+2019-11-16 14:46:47,758 [http-nio-8888-exec-2] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:547 - Completed initialization in 10 ms
+2019-11-16 14:46:47,834 [http-nio-8888-exec-2] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:54 - 【请求 URL】：http://localhost:8888/api/employees
+2019-11-16 14:46:47,836 [http-nio-8888-exec-2] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:55 - 【请求类名】：com.usts.salarymanage.controller.EmployeeController，【请求方法名】：saveEmployee
+2019-11-16 14:46:47,843 [http-nio-8888-exec-2] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:58 - 【请求参数】：{}，
+2019-11-16 14:46:47,871 [http-nio-8888-exec-2] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:110 - HikariPool-1 - Starting...
+2019-11-16 14:46:48,023 [http-nio-8888-exec-2] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:123 - HikariPool-1 - Start completed.
+2019-11-16 14:46:48,076 [http-nio-8888-exec-2] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:73 - 【返回值】：{"code":200,"data":{"empSex":"男","empName":"GuAn","empDepartment":1,"empAge":20,"id":2,"empCareer":1},"isok":true,"message":"success"}
+2019-11-16 14:48:49,146 [http-nio-8888-exec-5] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:54 - 【请求 URL】：http://localhost:8888/api/employees
+2019-11-16 14:48:49,147 [http-nio-8888-exec-5] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:55 - 【请求类名】：com.usts.salarymanage.controller.EmployeeController，【请求方法名】：saveEmployee
+2019-11-16 14:48:49,147 [http-nio-8888-exec-5] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:58 - 【请求参数】：{}，
+2019-11-16 14:48:49,150 [http-nio-8888-exec-5] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:73 - 【返回值】：{"code":200,"data":{"empSex":"男","empName":"zhu","empDepartment":2,"empAge":14,"id":3,"empCareer":2},"isok":true,"message":"success"}
+2019-11-16 14:48:56,161 [http-nio-8888-exec-6] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:54 - 【请求 URL】：http://localhost:8888/api/employees
+2019-11-16 14:48:56,162 [http-nio-8888-exec-6] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:55 - 【请求类名】：com.usts.salarymanage.controller.EmployeeController，【请求方法名】：saveEmployee
+2019-11-16 14:48:56,162 [http-nio-8888-exec-6] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:58 - 【请求参数】：{}，
+2019-11-16 14:48:56,165 [http-nio-8888-exec-6] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:73 - 【返回值】：{"code":200,"data":{"empSex":"男","empName":"zhu","empDepartment":2,"empAge":14,"id":4,"empCareer":2},"isok":true,"message":"success"}
+2019-11-16 14:48:57,069 [http-nio-8888-exec-7] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:54 - 【请求 URL】：http://localhost:8888/api/employees
+2019-11-16 14:48:57,070 [http-nio-8888-exec-7] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:55 - 【请求类名】：com.usts.salarymanage.controller.EmployeeController，【请求方法名】：saveEmployee
+2019-11-16 14:48:57,070 [http-nio-8888-exec-7] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:58 - 【请求参数】：{}，
+2019-11-16 14:48:57,073 [http-nio-8888-exec-7] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:73 - 【返回值】：{"code":200,"data":{"empSex":"男","empName":"zhu","empDepartment":2,"empAge":14,"id":5,"empCareer":2},"isok":true,"message":"success"}
+2019-11-16 14:51:43,990 [http-nio-8888-exec-10] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:54 - 【请求 URL】：http://localhost:8888/api/employees/2
+2019-11-16 14:51:43,991 [http-nio-8888-exec-10] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:55 - 【请求类名】：com.usts.salarymanage.controller.EmployeeController，【请求方法名】：queryById
+2019-11-16 14:51:43,991 [http-nio-8888-exec-10] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:58 - 【请求参数】：{}，
+2019-11-16 14:51:44,000 [http-nio-8888-exec-10] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:73 - 【返回值】：{"code":200,"data":{"empSex":"男","empName":"GuAn","empDepartment":1,"empAge":20,"id":2,"empCareer":1},"isok":true,"message":"success"}
+2019-11-16 14:52:05,230 [http-nio-8888-exec-1] WARN  [o.s.w.s.m.support.DefaultHandlerExceptionResolver] AbstractHandlerExceptionResolver.java:199 - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.usts.salarymanage.common.AjaxResponse com.usts.salarymanage.controller.EmployeeController.queryAll(com.usts.salarymanage.model.Page)]
+2019-11-16 14:52:18,529 [http-nio-8888-exec-3] WARN  [o.s.w.s.m.support.DefaultHandlerExceptionResolver] AbstractHandlerExceptionResolver.java:199 - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.usts.salarymanage.common.AjaxResponse com.usts.salarymanage.controller.EmployeeController.queryAll(com.usts.salarymanage.model.Page)]
+2019-11-16 14:53:28,547 [http-nio-8888-exec-5] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:54 - 【请求 URL】：http://localhost:8888/api/employees
+2019-11-16 14:53:28,547 [http-nio-8888-exec-5] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:55 - 【请求类名】：com.usts.salarymanage.controller.EmployeeController，【请求方法名】：queryAll
+2019-11-16 14:53:28,548 [http-nio-8888-exec-5] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:58 - 【请求参数】：{}，
+2019-11-16 14:53:28,606 [http-nio-8888-exec-5] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:73 - 【返回值】：{"code":200,"data":{"startRow":1,"navigatepageNums":[1,2],"prePage":0,"hasNextPage":true,"nextPage":2,"pageSize":3,"endRow":3,"list":[{"empSex":"男","empName":"GuAn","empDepartment":1,"empAge":20,"id":1,"empCareer":1},{"empSex":"男","empName":"GuAn","empDepartment":1,"empAge":20,"id":2,"empCareer":1},{"empSex":"男","empName":"zhu","empDepartment":2,"empAge":14,"id":3,"empCareer":2}],"pageNum":1,"navigatePages":8,"navigateFirstPage":1,"total":5,"pages":2,"size":3,"isLastPage":false,"hasPreviousPage":false,"navigateLastPage":2,"isFirstPage":true},"isok":true,"message":"success"}
+2019-11-16 14:54:40,863 [http-nio-8888-exec-8] WARN  [o.s.w.s.m.support.DefaultHandlerExceptionResolver] AbstractHandlerExceptionResolver.java:199 - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'PUT' not supported]
+2019-11-16 14:54:55,955 [http-nio-8888-exec-9] WARN  [o.s.w.s.m.support.DefaultHandlerExceptionResolver] AbstractHandlerExceptionResolver.java:199 - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'PUT' not supported]
+2019-11-16 14:55:26,369 [Thread-10] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:208 - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-16 14:55:26,370 [Thread-10] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:350 - HikariPool-1 - Shutdown initiated...
+2019-11-16 14:55:26,375 [Thread-10] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:352 - HikariPool-1 - Shutdown completed.
+2019-11-16 14:55:26,752 [restartedMain] INFO  [com.usts.salarymanage.SalarymanageApplication] StartupInfoLogger.java:55 - Starting SalarymanageApplication on gadeMacBook-Pro.local with PID 8935 (/Users/shawnyue/IdeaProjects/SalaryManage/target/classes started by shawnyue in /Users/shawnyue/IdeaProjects/SalaryManage)
+2019-11-16 14:55:26,752 [restartedMain] INFO  [com.usts.salarymanage.SalarymanageApplication] SpringApplication.java:651 - No active profile set, falling back to default profiles: default
+2019-11-16 14:55:26,945 [restartedMain] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:246 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-16 14:55:26,946 [restartedMain] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-16 14:55:26,949 [restartedMain] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:184 - Finished Spring Data repository scanning in 2ms. Found 0 repository interfaces.
+2019-11-16 14:55:26,998 [restartedMain] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-16 14:55:27,074 [restartedMain] WARN  [org.apache.tomcat.util.modeler.Registry] DirectJDKLog.java:173 - The MBean registry cannot be disabled because it has already been initialised
+2019-11-16 14:55:27,089 [restartedMain] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:92 - Tomcat initialized with port(s): 8888 (http)
+2019-11-16 14:55:27,090 [restartedMain] INFO  [org.apache.catalina.core.StandardService] DirectJDKLog.java:173 - Starting service [Tomcat]
+2019-11-16 14:55:27,090 [restartedMain] INFO  [org.apache.catalina.core.StandardEngine] DirectJDKLog.java:173 - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-11-16 14:55:27,102 [restartedMain] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring embedded WebApplicationContext
+2019-11-16 14:55:27,102 [restartedMain] INFO  [org.springframework.web.context.ContextLoader] ServletWebServerApplicationContext.java:284 - Root WebApplicationContext: initialization completed in 347 ms
+2019-11-16 14:55:27,489 [restartedMain] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-16 14:55:27,507 [restartedMain] INFO  [o.s.b.d.autoconfigure.OptionalLiveReloadServer] OptionalLiveReloadServer.java:58 - LiveReload server is running on port 35729
+2019-11-16 14:55:27,641 [restartedMain] INFO  [s.d.s.web.plugins.DocumentationPluginsBootstrapper] DocumentationPluginsBootstrapper.java:120 - Context refreshed
+2019-11-16 14:55:27,641 [restartedMain] INFO  [s.d.s.web.plugins.DocumentationPluginsBootstrapper] DocumentationPluginsBootstrapper.java:123 - Found 1 custom documentation plugin(s)
+2019-11-16 14:55:27,643 [restartedMain] INFO  [s.d.spring.web.scanners.ApiListingReferenceScanner] ApiListingReferenceScanner.java:41 - Scanning for api listing references
+2019-11-16 14:55:27,669 [restartedMain] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:204 - Tomcat started on port(s): 8888 (http) with context path ''
+2019-11-16 14:55:27,669 [restartedMain] INFO  [com.usts.salarymanage.SalarymanageApplication] StartupInfoLogger.java:61 - Started SalarymanageApplication in 1.148 seconds (JVM running for 595.147)
+2019-11-16 14:55:27,671 [restartedMain] INFO  [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener] ConditionEvaluationDeltaLoggingListener.java:63 - Condition evaluation unchanged
+2019-11-16 14:55:30,087 [Thread-19] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:208 - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-16 14:55:30,348 [restartedMain] INFO  [com.usts.salarymanage.SalarymanageApplication] StartupInfoLogger.java:55 - Starting SalarymanageApplication on gadeMacBook-Pro.local with PID 8935 (/Users/shawnyue/IdeaProjects/SalaryManage/target/classes started by shawnyue in /Users/shawnyue/IdeaProjects/SalaryManage)
+2019-11-16 14:55:30,348 [restartedMain] INFO  [com.usts.salarymanage.SalarymanageApplication] SpringApplication.java:651 - No active profile set, falling back to default profiles: default
+2019-11-16 14:55:30,642 [restartedMain] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:246 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-16 14:55:30,642 [restartedMain] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-16 14:55:30,647 [restartedMain] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:184 - Finished Spring Data repository scanning in 5ms. Found 0 repository interfaces.
+2019-11-16 14:55:30,701 [restartedMain] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-16 14:55:30,767 [restartedMain] WARN  [org.apache.tomcat.util.modeler.Registry] DirectJDKLog.java:173 - The MBean registry cannot be disabled because it has already been initialised
+2019-11-16 14:55:30,785 [restartedMain] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:92 - Tomcat initialized with port(s): 8888 (http)
+2019-11-16 14:55:30,786 [restartedMain] INFO  [org.apache.catalina.core.StandardService] DirectJDKLog.java:173 - Starting service [Tomcat]
+2019-11-16 14:55:30,786 [restartedMain] INFO  [org.apache.catalina.core.StandardEngine] DirectJDKLog.java:173 - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-11-16 14:55:30,794 [restartedMain] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring embedded WebApplicationContext
+2019-11-16 14:55:30,795 [restartedMain] INFO  [org.springframework.web.context.ContextLoader] ServletWebServerApplicationContext.java:284 - Root WebApplicationContext: initialization completed in 442 ms
+2019-11-16 14:55:31,205 [restartedMain] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-16 14:55:31,227 [restartedMain] INFO  [o.s.b.d.autoconfigure.OptionalLiveReloadServer] OptionalLiveReloadServer.java:58 - LiveReload server is running on port 35729
+2019-11-16 14:55:31,418 [restartedMain] INFO  [s.d.s.web.plugins.DocumentationPluginsBootstrapper] DocumentationPluginsBootstrapper.java:120 - Context refreshed
+2019-11-16 14:55:31,419 [restartedMain] INFO  [s.d.s.web.plugins.DocumentationPluginsBootstrapper] DocumentationPluginsBootstrapper.java:123 - Found 1 custom documentation plugin(s)
+2019-11-16 14:55:31,424 [restartedMain] INFO  [s.d.spring.web.scanners.ApiListingReferenceScanner] ApiListingReferenceScanner.java:41 - Scanning for api listing references
+2019-11-16 14:55:31,470 [restartedMain] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:204 - Tomcat started on port(s): 8888 (http) with context path ''
+2019-11-16 14:55:31,471 [restartedMain] INFO  [com.usts.salarymanage.SalarymanageApplication] StartupInfoLogger.java:61 - Started SalarymanageApplication in 1.177 seconds (JVM running for 598.949)
+2019-11-16 14:55:31,473 [restartedMain] INFO  [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener] ConditionEvaluationDeltaLoggingListener.java:63 - Condition evaluation unchanged
+2019-11-16 14:55:35,595 [http-nio-8888-exec-2] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-11-16 14:55:35,596 [http-nio-8888-exec-2] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:525 - Initializing Servlet 'dispatcherServlet'
+2019-11-16 14:55:35,604 [http-nio-8888-exec-2] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:547 - Completed initialization in 8 ms
+2019-11-16 14:55:35,608 [http-nio-8888-exec-2] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:54 - 【请求 URL】：http://localhost:8888/api/employees/1
+2019-11-16 14:55:35,609 [http-nio-8888-exec-2] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:55 - 【请求类名】：com.usts.salarymanage.controller.EmployeeController，【请求方法名】：updateById
+2019-11-16 14:55:35,609 [http-nio-8888-exec-2] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:58 - 【请求参数】：{}，
+2019-11-16 14:55:35,612 [http-nio-8888-exec-2] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:110 - HikariPool-2 - Starting...
+2019-11-16 14:55:35,616 [http-nio-8888-exec-2] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:123 - HikariPool-2 - Start completed.
+2019-11-16 14:55:35,620 [http-nio-8888-exec-2] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:73 - 【返回值】：{"code":200,"data":true,"isok":true,"message":"success"}
+2019-11-16 14:58:10,227 [http-nio-8888-exec-5] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:54 - 【请求 URL】：http://localhost:8888/api/employees/5
+2019-11-16 14:58:10,228 [http-nio-8888-exec-5] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:55 - 【请求类名】：com.usts.salarymanage.controller.EmployeeController，【请求方法名】：deleteById
+2019-11-16 14:58:10,228 [http-nio-8888-exec-5] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:58 - 【请求参数】：{}，
+2019-11-16 14:58:10,232 [http-nio-8888-exec-5] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:73 - 【返回值】：{"code":200,"data":true,"isok":true,"message":"success"}
+2019-11-16 15:00:21,036 [http-nio-8888-exec-8] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:54 - 【请求 URL】：http://localhost:8888/api/employees/4
+2019-11-16 15:00:21,037 [http-nio-8888-exec-8] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:55 - 【请求类名】：com.usts.salarymanage.controller.EmployeeController，【请求方法名】：deleteById
+2019-11-16 15:03:37,027 [HikariPool-2 housekeeper] WARN  [com.zaxxer.hikari.pool.HikariPool] HikariPool.java:787 - HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=3m31s248ms).
+2019-11-16 15:03:37,027 [http-nio-8888-exec-8] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:58 - 【请求参数】：{}，
+2019-11-16 15:03:37,031 [http-nio-8888-exec-8] INFO  [com.usts.salarymanage.aspectj.AopLog] AopLog.java:73 - 【返回值】：{"code":200,"data":true,"isok":true,"message":"success"}
+2019-11-16 15:03:42,916 [Thread-24] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:208 - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-16 15:03:42,917 [Thread-24] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:350 - HikariPool-2 - Shutdown initiated...
+2019-11-16 15:03:42,920 [Thread-24] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:352 - HikariPool-2 - Shutdown completed.
+2019-11-16 15:03:43,352 [restartedMain] INFO  [com.usts.salarymanage.SalarymanageApplication] StartupInfoLogger.java:55 - Starting SalarymanageApplication on gadeMacBook-Pro.local with PID 8935 (/Users/shawnyue/IdeaProjects/SalaryManage/target/classes started by shawnyue in /Users/shawnyue/IdeaProjects/SalaryManage)
+2019-11-16 15:03:43,352 [restartedMain] INFO  [com.usts.salarymanage.SalarymanageApplication] SpringApplication.java:651 - No active profile set, falling back to default profiles: default
+2019-11-16 15:03:43,587 [restartedMain] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:246 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-16 15:03:43,587 [restartedMain] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-16 15:03:43,591 [restartedMain] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:184 - Finished Spring Data repository scanning in 3ms. Found 0 repository interfaces.
+2019-11-16 15:03:43,631 [restartedMain] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-16 15:03:43,691 [restartedMain] WARN  [org.apache.tomcat.util.modeler.Registry] DirectJDKLog.java:173 - The MBean registry cannot be disabled because it has already been initialised
+2019-11-16 15:03:43,707 [restartedMain] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:92 - Tomcat initialized with port(s): 8888 (http)
+2019-11-16 15:03:43,708 [restartedMain] INFO  [org.apache.catalina.core.StandardService] DirectJDKLog.java:173 - Starting service [Tomcat]
+2019-11-16 15:03:43,708 [restartedMain] INFO  [org.apache.catalina.core.StandardEngine] DirectJDKLog.java:173 - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-11-16 15:03:43,718 [restartedMain] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring embedded WebApplicationContext
+2019-11-16 15:03:43,718 [restartedMain] INFO  [org.springframework.web.context.ContextLoader] ServletWebServerApplicationContext.java:284 - Root WebApplicationContext: initialization completed in 363 ms
+2019-11-16 15:03:44,080 [restartedMain] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-16 15:03:44,102 [restartedMain] INFO  [o.s.b.d.autoconfigure.OptionalLiveReloadServer] OptionalLiveReloadServer.java:58 - LiveReload server is running on port 35729
+2019-11-16 15:03:44,264 [restartedMain] INFO  [s.d.s.web.plugins.DocumentationPluginsBootstrapper] DocumentationPluginsBootstrapper.java:120 - Context refreshed
+2019-11-16 15:03:44,265 [restartedMain] INFO  [s.d.s.web.plugins.DocumentationPluginsBootstrapper] DocumentationPluginsBootstrapper.java:123 - Found 1 custom documentation plugin(s)
+2019-11-16 15:03:44,267 [restartedMain] INFO  [s.d.spring.web.scanners.ApiListingReferenceScanner] ApiListingReferenceScanner.java:41 - Scanning for api listing references
+2019-11-16 15:03:44,292 [restartedMain] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:204 - Tomcat started on port(s): 8888 (http) with context path ''
+2019-11-16 15:03:44,293 [restartedMain] INFO  [com.usts.salarymanage.SalarymanageApplication] StartupInfoLogger.java:61 - Started SalarymanageApplication in 1.196 seconds (JVM running for 1091.753)
+2019-11-16 15:03:44,294 [restartedMain] INFO  [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener] ConditionEvaluationDeltaLoggingListener.java:63 - Condition evaluation unchanged
+2019-11-16 15:03:59,235 [Thread-29] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:208 - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-16 15:03:59,443 [restartedMain] INFO  [com.usts.salarymanage.SalarymanageApplication] StartupInfoLogger.java:55 - Starting SalarymanageApplication on gadeMacBook-Pro.local with PID 8935 (/Users/shawnyue/IdeaProjects/SalaryManage/target/classes started by shawnyue in /Users/shawnyue/IdeaProjects/SalaryManage)
+2019-11-16 15:03:59,444 [restartedMain] INFO  [com.usts.salarymanage.SalarymanageApplication] SpringApplication.java:651 - No active profile set, falling back to default profiles: default
+2019-11-16 15:03:59,701 [restartedMain] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:246 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-16 15:03:59,701 [restartedMain] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-16 15:03:59,706 [restartedMain] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:184 - Finished Spring Data repository scanning in 3ms. Found 0 repository interfaces.
+2019-11-16 15:03:59,752 [restartedMain] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-16 15:03:59,822 [restartedMain] WARN  [org.apache.tomcat.util.modeler.Registry] DirectJDKLog.java:173 - The MBean registry cannot be disabled because it has already been initialised
+2019-11-16 15:03:59,838 [restartedMain] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:92 - Tomcat initialized with port(s): 8888 (http)
+2019-11-16 15:03:59,838 [restartedMain] INFO  [org.apache.catalina.core.StandardService] DirectJDKLog.java:173 - Starting service [Tomcat]
+2019-11-16 15:03:59,839 [restartedMain] INFO  [org.apache.catalina.core.StandardEngine] DirectJDKLog.java:173 - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-11-16 15:03:59,845 [restartedMain] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring embedded WebApplicationContext
+2019-11-16 15:03:59,845 [restartedMain] INFO  [org.springframework.web.context.ContextLoader] ServletWebServerApplicationContext.java:284 - Root WebApplicationContext: initialization completed in 398 ms
+2019-11-16 15:04:00,268 [restartedMain] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-16 15:04:00,299 [restartedMain] INFO  [o.s.b.d.autoconfigure.OptionalLiveReloadServer] OptionalLiveReloadServer.java:58 - LiveReload server is running on port 35729
+2019-11-16 15:04:00,497 [restartedMain] INFO  [s.d.s.web.plugins.DocumentationPluginsBootstrapper] DocumentationPluginsBootstrapper.java:120 - Context refreshed
+2019-11-16 15:04:00,498 [restartedMain] INFO  [s.d.s.web.plugins.DocumentationPluginsBootstrapper] DocumentationPluginsBootstrapper.java:123 - Found 1 custom documentation plugin(s)
+2019-11-16 15:04:00,501 [restartedMain] INFO  [s.d.spring.web.scanners.ApiListingReferenceScanner] ApiListingReferenceScanner.java:41 - Scanning for api listing references
+2019-11-16 15:04:00,527 [restartedMain] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:204 - Tomcat started on port(s): 8888 (http) with context path ''
+2019-11-16 15:04:00,527 [restartedMain] INFO  [com.usts.salarymanage.SalarymanageApplication] StartupInfoLogger.java:61 - Started SalarymanageApplication in 1.109 seconds (JVM running for 1107.988)
+2019-11-16 15:04:00,529 [restartedMain] INFO  [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener] ConditionEvaluationDeltaLoggingListener.java:63 - Condition evaluation unchanged
