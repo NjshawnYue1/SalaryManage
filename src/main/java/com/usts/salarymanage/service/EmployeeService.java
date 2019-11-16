@@ -52,5 +52,21 @@ public interface EmployeeService {
      */
     List<Employee> queryAllEmp();
 
+    /**
+     * 根据职位查询员工
+     *
+     * @param careerId
+     * @return 员工列表
+     */
+    List<Employee> queryByCareerId(int careerId);
+
+    /**
+     * 根据部门查询员工
+     *
+     * @param departmentId
+     * @return 员工列表
+     */
+    List<Employee> queryByDepartmentId(int departmentId);
+
 
 }

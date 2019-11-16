@@ -27,3 +27,9 @@ mybatis-plus:
   global-config:
     # 关闭banner
     banner: false
+logging:
+  level:
+    com:
+      usts:
+        salarymanage:
+          mapper: debug

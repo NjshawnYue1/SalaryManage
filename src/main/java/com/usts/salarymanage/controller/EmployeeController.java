@@ -72,4 +72,18 @@ public class EmployeeController {
         boolean flag = employeeService.delEmployee(id);
         return AjaxResponse.success(flag);
     }
+
+    @ApiOperation("根据职位查询员工列表")
+    @GetMapping("/employees/career/{careerId}")
+    public AjaxResponse selectByCareerId(@PathVariable int careerId) {
+
+        return AjaxResponse.success(employeeService.queryByCareerId(careerId));
+    }
+
+    @ApiOperation("根据部门查询员工列表")
+    @GetMapping("/employees/department/{departmentId}")
+    public AjaxResponse selectByDepartmentId(@PathVariable int departmentId) {
+
+        return AjaxResponse.success(employeeService.queryByCareerId(departmentId));
+    }
 }

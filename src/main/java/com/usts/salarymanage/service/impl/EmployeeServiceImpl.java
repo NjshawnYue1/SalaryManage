@@ -60,4 +60,16 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         return tblEmployeeDao.selectByExample(null);
     }
+
+    @Override
+    public List<Employee> queryByCareerId(int careerId) {
+
+        return tblEmployeeDao.selectByCareerId(careerId);
+    }
+
+    @Override
+    public List<Employee> queryByDepartmentId(int departmentId) {
+
+        return tblEmployeeDao.selectByDepartmentId(departmentId);
+    }
 }

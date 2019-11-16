@@ -225,4 +225,19 @@
       emp_career = #{empCareer,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectByCareerId" parameterType="Integer" resultMap="BaseResultMap">
+    select * from tbl_emp
+    <where>
+      emp_career = #{empCareer,jdbcType=INTEGER}
+    </where>
+  </select>
+
+  <select id="selectByDepartmentId" parameterType="Integer" resultMap="BaseResultMap">
+    select * from tbl_emp
+    <where>
+      emp_department = #{empDepartment,jdbcType=INTEGER}
+    </where>
+  </select>
+
 </mapper>

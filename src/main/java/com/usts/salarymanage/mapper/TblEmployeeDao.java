@@ -2,7 +2,9 @@ package com.usts.salarymanage.mapper;
 
 import com.usts.salarymanage.model.Employee;
 import com.usts.salarymanage.model.EmployeeExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface TblEmployeeDao {
@@ -18,7 +20,7 @@ public interface TblEmployeeDao {
 
     List<Employee> selectByExample(EmployeeExample example);
 
-    Employee selectByPrimaryKey(Integer id);
+
 
     int updateByExampleSelective(@Param("record") Employee record, @Param("example") EmployeeExample example);
 
@@ -27,4 +29,11 @@ public interface TblEmployeeDao {
     int updateByPrimaryKeySelective(Employee record);
 
     int updateByPrimaryKey(Employee record);
+
+    List<Employee> selectByCareerId(Integer careerId);
+
+    List<Employee> selectByDepartmentId(Integer departmentId);
+
+    Employee selectByPrimaryKey(Integer id);
+
 }
