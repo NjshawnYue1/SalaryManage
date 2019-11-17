@@ -34,6 +34,8 @@ public class Salary implements Serializable {
      */
     private Long housingFund;
 
+    private Integer empId;
+
     private static final long serialVersionUID = 1L;
 
     public Integer getId() {
@@ -84,6 +86,14 @@ public class Salary implements Serializable {
         this.housingFund = housingFund;
     }
 
+    public Integer getEmpId() {
+        return empId;
+    }
+
+    public void setEmpId(Integer empId) {
+        this.empId = empId;
+    }
+
     @Override
     public boolean equals(Object that) {
         if (this == that) {
@@ -101,7 +111,8 @@ public class Salary implements Serializable {
             && (this.getAllowance() == null ? other.getAllowance() == null : this.getAllowance().equals(other.getAllowance()))
             && (this.getBouns() == null ? other.getBouns() == null : this.getBouns().equals(other.getBouns()))
             && (this.getInsurance() == null ? other.getInsurance() == null : this.getInsurance().equals(other.getInsurance()))
-            && (this.getHousingFund() == null ? other.getHousingFund() == null : this.getHousingFund().equals(other.getHousingFund()));
+            && (this.getHousingFund() == null ? other.getHousingFund() == null : this.getHousingFund().equals(other.getHousingFund()))
+            && (this.getEmpId() == null ? other.getEmpId() == null : this.getEmpId().equals(other.getEmpId()));
     }
 
     @Override
@@ -114,6 +125,7 @@ public class Salary implements Serializable {
         result = prime * result + ((getBouns() == null) ? 0 : getBouns().hashCode());
         result = prime * result + ((getInsurance() == null) ? 0 : getInsurance().hashCode());
         result = prime * result + ((getHousingFund() == null) ? 0 : getHousingFund().hashCode());
+        result = prime * result + ((getEmpId() == null) ? 0 : getEmpId().hashCode());
         return result;
     }
 
@@ -129,6 +141,7 @@ public class Salary implements Serializable {
         sb.append(", bouns=").append(bouns);
         sb.append(", insurance=").append(insurance);
         sb.append(", housingFund=").append(housingFund);
+        sb.append(", empId=").append(empId);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

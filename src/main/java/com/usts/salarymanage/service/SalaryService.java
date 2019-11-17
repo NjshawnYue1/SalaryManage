@@ -42,7 +42,7 @@ public interface SalaryService {
      * @param id
      * @return
      */
-    Salary querySalary(int id);
+    Salary querySalaryById(int id);
 
     /**
      * 查询所有记录

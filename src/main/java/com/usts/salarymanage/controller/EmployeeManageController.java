@@ -11,17 +11,15 @@ import com.usts.salarymanage.model.Page;
 import com.usts.salarymanage.model.Salary;
 import com.usts.salarymanage.service.EmployeeService;
 import com.usts.salarymanage.service.SalaryService;
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
-import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 /**
  * @author GuAn
@@ -33,7 +31,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 @RestController
 @Slf4j
 @RequestMapping("/api")
-public class EmployeeController {
+public class EmployeeManageController {
     @Resource(name = "employeeServiceImpl")
     EmployeeService employeeService;
 
@@ -43,11 +41,14 @@ public class EmployeeController {
     @Resource
     TblEmployeeDao tblEmployeeDao;
 
-    @ApiOperation("新增一条员工记录")
+
+    @ApiOperation("新增一条员工记录,返回新增的员工记录")
     @PostMapping("/employees")
-    public AjaxResponse saveEmployee(@RequestBody Employee employee) {
+    public AjaxResponse saveEmployee(@RequestBody EmployeeVo employeeVo) {
+        Employee employee = new Employee();
+        BeanUtil.copyProperties(employeeVo, employee);
         employeeService.saveEmployee(employee);
-        return AjaxResponse.success(employee);
+        return AjaxResponse.success(employeeVo);
     }
 
     @ApiOperation("查询员工记录")
@@ -55,6 +56,9 @@ public class EmployeeController {
     public AjaxResponse queryById(@PathVariable int id) {
 
         Salary salary = salaryService.queryByEmpId(id);
+        if (salary == null) {
+            return AjaxResponse.success(employeeService.queryOneEmp(id));
+        }
         Long result = salary.getBaseSalary() + salary.getAllowance() + salary.getBouns() - salary.getInsurance() - salary.getHousingFund();
         EmployeeVo employeeVo = new EmployeeVo();
         employeeVo.setSalary(result);
@@ -67,64 +71,92 @@ public class EmployeeController {
     public AjaxResponse queryAll(@RequestBody Page page) {
         PageHelper.startPage(page.getPageNum(), page.getPageSize());
         List<Employee> employeeList = tblEmployeeDao.selectByExample(null);
+        List<EmployeeVo> employeeVoList = new ArrayList<>();
         Iterator<Employee> iterator = employeeList.iterator();
-        EmployeeVo employeeVo = new EmployeeVo();
         while (iterator.hasNext()) {
             Employee employee = iterator.next();
+            EmployeeVo employeeVo = new EmployeeVo();
             Salary salary = salaryService.queryByEmpId(employee.getId());
+            if (salary == null) {
+                employeeVo.setSalary(0L);
+                BeanUtil.copyProperties(employee, employeeVo);
+                employeeVoList.add(employeeVo);
+                continue;
+            }
             Long result = salary.getBaseSalary() + salary.getAllowance() + salary.getBouns() - salary.getInsurance() - salary.getHousingFund();
             employeeVo.setSalary(result);
             BeanUtil.copyProperties(employee, employeeVo);
+            employeeVoList.add(employeeVo);
         }
-        PageInfo<Employee> pageInfo = PageInfo.of(employeeList);
+        PageInfo<EmployeeVo> pageInfo = PageInfo.of(employeeVoList);
+        log.info(pageInfo.toString());
         return AjaxResponse.success(pageInfo);
     }
 
     @ApiOperation("根据id更新员工信息 返回操作是否成功")
     @PutMapping("/employees/{id}")
-    public AjaxResponse updateById(@PathVariable int id, @RequestBody Employee employee) {
+    public AjaxResponse updateById(@PathVariable int id, @RequestBody EmployeeVo employeeVo) {
+        Employee employee = new Employee();
+        BeanUtil.copyProperties(employeeVo, employee);
         employee.setId(id);
         boolean flag = employeeService.updateEmployee(employee);
         return AjaxResponse.success(flag);
     }
 
-    @ApiOperation("根据id删除员工记录")
+    @ApiOperation("根据id删除员工记录,返回操作是否成功")
     @DeleteMapping("/employees/{id}")
     public AjaxResponse deleteById(@PathVariable int id) {
         boolean flag = employeeService.delEmployee(id);
         return AjaxResponse.success(flag);
     }
 
-    @ApiOperation("根据职位查询单个员工")
-    @GetMapping("/employees/career/{careerId}")
+    @ApiOperation("根据职位查询员工,返回员工列表")
+    @GetMapping("/employees/careers/{careerId}")
     public AjaxResponse selectByCareerId(@PathVariable int careerId) {
         List<Employee> employeeList = employeeService.queryByCareerId(careerId);
+        List<EmployeeVo> employeeVoList = new ArrayList<>();
         Iterator<Employee> iterator = employeeList.iterator();
-        EmployeeVo employeeVo = new EmployeeVo();
         while (iterator.hasNext()) {
+            EmployeeVo employeeVo = new EmployeeVo();
             Employee employee = iterator.next();
             Salary salary = salaryService.queryByEmpId(employee.getId());
+            if (salary == null) {
+                employeeVo.setSalary(0L);
+                BeanUtil.copyProperties(employee, employeeVo);
+                employeeVoList.add(employeeVo);
+                continue;
+            }
             Long result = salary.getBaseSalary() + salary.getAllowance() + salary.getBouns() - salary.getInsurance() - salary.getHousingFund();
             employeeVo.setSalary(result);
             BeanUtil.copyProperties(employee, employeeVo);
+            employeeVoList.add(employeeVo);
         }
-        return AjaxResponse.success(employeeVo);
+        return AjaxResponse.success(employeeVoList);
     }
 
     @ApiOperation("根据部门查询员工列表")
-    @GetMapping("/employees/department/{departmentId}")
+    @GetMapping("/employees/departments/{departmentId}")
     public AjaxResponse selectByDepartmentId(@PathVariable int departmentId) {
 
         List<Employee> employeeList = employeeService.queryByCareerId(departmentId);
+        List<EmployeeVo> employeeVoList = new ArrayList<>();
         Iterator<Employee> iterator = employeeList.iterator();
-        EmployeeVo employeeVo = new EmployeeVo();
         while (iterator.hasNext()) {
             Employee employee = iterator.next();
+            EmployeeVo employeeVo = new EmployeeVo();
             Salary salary = salaryService.queryByEmpId(employee.getId());
+            if (salary == null) {
+                employeeVo.setSalary(0L);
+                BeanUtil.copyProperties(employee, employeeVo);
+                employeeVoList.add(employeeVo);
+                continue;
+
+            }
             Long result = salary.getBaseSalary() + salary.getAllowance() + salary.getBouns() - salary.getInsurance() - salary.getHousingFund();
             employeeVo.setSalary(result);
             BeanUtil.copyProperties(employee, employeeVo);
+            employeeVoList.add(employeeVo);
         }
-        return AjaxResponse.success(employeeVo);
+        return AjaxResponse.success(employeeVoList);
     }
 }

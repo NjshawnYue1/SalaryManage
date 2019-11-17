@@ -1,241 +1,250 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.usts.salarymanage.mapper.TblSalaryDao">
-    <resultMap id="BaseResultMap" type="com.usts.salarymanage.model.Salary">
-        <id column="id" jdbcType="INTEGER" property="id"/>
-        <result column="base_salary" jdbcType="DECIMAL" property="baseSalary"/>
-        <result column="allowance" jdbcType="DECIMAL" property="allowance"/>
-        <result column="bouns" jdbcType="DECIMAL" property="bouns"/>
-        <result column="insurance" jdbcType="DECIMAL" property="insurance"/>
-        <result column="housing_fund" jdbcType="DECIMAL" property="housingFund"/>
-    </resultMap>
-    <sql id="Example_Where_Clause">
-        <where>
-            <foreach collection="oredCriteria" item="criteria" separator="or">
-                <if test="criteria.valid">
-                    <trim prefix="(" prefixOverrides="and" suffix=")">
-                        <foreach collection="criteria.criteria" item="criterion">
-                            <choose>
-                                <when test="criterion.noValue">
-                                    and ${criterion.condition}
-                                </when>
-                                <when test="criterion.singleValue">
-                                    and ${criterion.condition} #{criterion.value}
-                                </when>
-                                <when test="criterion.betweenValue">
-                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                                </when>
-                                <when test="criterion.listValue">
-                                    and ${criterion.condition}
-                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
-                                             separator=",">
-                                        #{listItem}
-                                    </foreach>
-                                </when>
-                            </choose>
-                        </foreach>
-                    </trim>
-                </if>
+  <resultMap id="BaseResultMap" type="com.usts.salarymanage.model.Salary">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="base_salary" jdbcType="DECIMAL" property="baseSalary" />
+    <result column="allowance" jdbcType="DECIMAL" property="allowance" />
+    <result column="bouns" jdbcType="DECIMAL" property="bouns" />
+    <result column="insurance" jdbcType="DECIMAL" property="insurance" />
+    <result column="housing_fund" jdbcType="DECIMAL" property="housingFund" />
+    <result column="emp_id" jdbcType="INTEGER" property="empId" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
             </foreach>
-        </where>
-    </sql>
-    <sql id="Update_By_Example_Where_Clause">
-        <where>
-            <foreach collection="example.oredCriteria" item="criteria" separator="or">
-                <if test="criteria.valid">
-                    <trim prefix="(" prefixOverrides="and" suffix=")">
-                        <foreach collection="criteria.criteria" item="criterion">
-                            <choose>
-                                <when test="criterion.noValue">
-                                    and ${criterion.condition}
-                                </when>
-                                <when test="criterion.singleValue">
-                                    and ${criterion.condition} #{criterion.value}
-                                </when>
-                                <when test="criterion.betweenValue">
-                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                                </when>
-                                <when test="criterion.listValue">
-                                    and ${criterion.condition}
-                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
-                                             separator=",">
-                                        #{listItem}
-                                    </foreach>
-                                </when>
-                            </choose>
-                        </foreach>
-                    </trim>
-                </if>
-            </foreach>
-        </where>
-    </sql>
-    <sql id="Base_Column_List">
-    id, base_salary, allowance, bouns, insurance, housing_fund
+          </trim>
+        </if>
+      </foreach>
+    </where>
   </sql>
-    <select id="selectByExample" parameterType="com.usts.salarymanage.model.SalaryExample" resultMap="BaseResultMap">
-        select
-        <if test="distinct">
-            distinct
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
         </if>
-        <include refid="Base_Column_List"/>
-        from tbl_salary
-        <if test="_parameter != null">
-            <include refid="Example_Where_Clause"/>
-        </if>
-        <if test="orderByClause != null">
-            order by ${orderByClause}
-        </if>
-        <if test="limit != null">
-            <if test="offset != null">
-                limit ${offset}, ${limit}
-            </if>
-            <if test="offset == null">
-                limit ${limit}
-            </if>
-        </if>
-    </select>
-    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-        select
-        <include refid="Base_Column_List"/>
-        from tbl_salary
-        where id = #{id,jdbcType=INTEGER}
-    </select>
-    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, base_salary, allowance, bouns, insurance, housing_fund, emp_id
+  </sql>
+  <select id="selectByExample" parameterType="com.usts.salarymanage.model.SalaryExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tbl_salary
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null">
+      <if test="offset != null">
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null">
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from tbl_salary
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from tbl_salary
     where id = #{id,jdbcType=INTEGER}
   </delete>
-    <delete id="deleteByExample" parameterType="com.usts.salarymanage.model.SalaryExample">
-        delete from tbl_salary
-        <if test="_parameter != null">
-            <include refid="Example_Where_Clause"/>
-        </if>
-    </delete>
-    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.usts.salarymanage.model.Salary"
-            useGeneratedKeys="true">
+  <delete id="deleteByExample" parameterType="com.usts.salarymanage.model.SalaryExample">
+    delete from tbl_salary
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.usts.salarymanage.model.Salary" useGeneratedKeys="true">
     insert into tbl_salary (base_salary, allowance, bouns, 
-      insurance, housing_fund)
+      insurance, housing_fund, emp_id
+      )
     values (#{baseSalary,jdbcType=DECIMAL}, #{allowance,jdbcType=DECIMAL}, #{bouns,jdbcType=DECIMAL}, 
-      #{insurance,jdbcType=DECIMAL}, #{housingFund,jdbcType=DECIMAL})
+      #{insurance,jdbcType=DECIMAL}, #{housingFund,jdbcType=DECIMAL}, #{empId,jdbcType=INTEGER}
+      )
   </insert>
-    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.usts.salarymanage.model.Salary"
-            useGeneratedKeys="true">
-        insert into tbl_salary
-        <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="baseSalary != null">
-                base_salary,
-            </if>
-            <if test="allowance != null">
-                allowance,
-            </if>
-            <if test="bouns != null">
-                bouns,
-            </if>
-            <if test="insurance != null">
-                insurance,
-            </if>
-            <if test="housingFund != null">
-                housing_fund,
-            </if>
-        </trim>
-        <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="baseSalary != null">
-                #{baseSalary,jdbcType=DECIMAL},
-            </if>
-            <if test="allowance != null">
-                #{allowance,jdbcType=DECIMAL},
-            </if>
-            <if test="bouns != null">
-                #{bouns,jdbcType=DECIMAL},
-            </if>
-            <if test="insurance != null">
-                #{insurance,jdbcType=DECIMAL},
-            </if>
-            <if test="housingFund != null">
-                #{housingFund,jdbcType=DECIMAL},
-            </if>
-        </trim>
-    </insert>
-    <select id="countByExample" parameterType="com.usts.salarymanage.model.SalaryExample" resultType="java.lang.Long">
-        select count(*) from tbl_salary
-        <if test="_parameter != null">
-            <include refid="Example_Where_Clause"/>
-        </if>
-    </select>
-    <update id="updateByExampleSelective" parameterType="map">
-        update tbl_salary
-        <set>
-            <if test="record.id != null">
-                id = #{record.id,jdbcType=INTEGER},
-            </if>
-            <if test="record.baseSalary != null">
-                base_salary = #{record.baseSalary,jdbcType=DECIMAL},
-            </if>
-            <if test="record.allowance != null">
-                allowance = #{record.allowance,jdbcType=DECIMAL},
-            </if>
-            <if test="record.bouns != null">
-                bouns = #{record.bouns,jdbcType=DECIMAL},
-            </if>
-            <if test="record.insurance != null">
-                insurance = #{record.insurance,jdbcType=DECIMAL},
-            </if>
-            <if test="record.housingFund != null">
-                housing_fund = #{record.housingFund,jdbcType=DECIMAL},
-            </if>
-        </set>
-        <if test="_parameter != null">
-            <include refid="Update_By_Example_Where_Clause"/>
-        </if>
-    </update>
-    <update id="updateByExample" parameterType="map">
-        update tbl_salary
-        set id = #{record.id,jdbcType=INTEGER},
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.usts.salarymanage.model.Salary" useGeneratedKeys="true">
+    insert into tbl_salary
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="baseSalary != null">
+        base_salary,
+      </if>
+      <if test="allowance != null">
+        allowance,
+      </if>
+      <if test="bouns != null">
+        bouns,
+      </if>
+      <if test="insurance != null">
+        insurance,
+      </if>
+      <if test="housingFund != null">
+        housing_fund,
+      </if>
+      <if test="empId != null">
+        emp_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="baseSalary != null">
+        #{baseSalary,jdbcType=DECIMAL},
+      </if>
+      <if test="allowance != null">
+        #{allowance,jdbcType=DECIMAL},
+      </if>
+      <if test="bouns != null">
+        #{bouns,jdbcType=DECIMAL},
+      </if>
+      <if test="insurance != null">
+        #{insurance,jdbcType=DECIMAL},
+      </if>
+      <if test="housingFund != null">
+        #{housingFund,jdbcType=DECIMAL},
+      </if>
+      <if test="empId != null">
+        #{empId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.usts.salarymanage.model.SalaryExample" resultType="java.lang.Long">
+    select count(*) from tbl_salary
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update tbl_salary
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.baseSalary != null">
         base_salary = #{record.baseSalary,jdbcType=DECIMAL},
+      </if>
+      <if test="record.allowance != null">
         allowance = #{record.allowance,jdbcType=DECIMAL},
+      </if>
+      <if test="record.bouns != null">
         bouns = #{record.bouns,jdbcType=DECIMAL},
+      </if>
+      <if test="record.insurance != null">
         insurance = #{record.insurance,jdbcType=DECIMAL},
-        housing_fund = #{record.housingFund,jdbcType=DECIMAL}
-        <if test="_parameter != null">
-            <include refid="Update_By_Example_Where_Clause"/>
-        </if>
-    </update>
-    <update id="updateByPrimaryKeySelective" parameterType="com.usts.salarymanage.model.Salary">
-        update tbl_salary
-        <set>
-            <if test="baseSalary != null">
-                base_salary = #{baseSalary,jdbcType=DECIMAL},
-            </if>
-            <if test="allowance != null">
-                allowance = #{allowance,jdbcType=DECIMAL},
-            </if>
-            <if test="bouns != null">
-                bouns = #{bouns,jdbcType=DECIMAL},
-            </if>
-            <if test="insurance != null">
-                insurance = #{insurance,jdbcType=DECIMAL},
-            </if>
-            <if test="housingFund != null">
-                housing_fund = #{housingFund,jdbcType=DECIMAL},
-            </if>
-        </set>
-        where id = #{id,jdbcType=INTEGER}
-    </update>
-    <update id="updateByPrimaryKey" parameterType="com.usts.salarymanage.model.Salary">
+      </if>
+      <if test="record.housingFund != null">
+        housing_fund = #{record.housingFund,jdbcType=DECIMAL},
+      </if>
+      <if test="record.empId != null">
+        emp_id = #{record.empId,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update tbl_salary
+    set id = #{record.id,jdbcType=INTEGER},
+      base_salary = #{record.baseSalary,jdbcType=DECIMAL},
+      allowance = #{record.allowance,jdbcType=DECIMAL},
+      bouns = #{record.bouns,jdbcType=DECIMAL},
+      insurance = #{record.insurance,jdbcType=DECIMAL},
+      housing_fund = #{record.housingFund,jdbcType=DECIMAL},
+      emp_id = #{record.empId,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.usts.salarymanage.model.Salary">
+    update tbl_salary
+    <set>
+      <if test="baseSalary != null">
+        base_salary = #{baseSalary,jdbcType=DECIMAL},
+      </if>
+      <if test="allowance != null">
+        allowance = #{allowance,jdbcType=DECIMAL},
+      </if>
+      <if test="bouns != null">
+        bouns = #{bouns,jdbcType=DECIMAL},
+      </if>
+      <if test="insurance != null">
+        insurance = #{insurance,jdbcType=DECIMAL},
+      </if>
+      <if test="housingFund != null">
+        housing_fund = #{housingFund,jdbcType=DECIMAL},
+      </if>
+      <if test="empId != null">
+        emp_id = #{empId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.usts.salarymanage.model.Salary">
     update tbl_salary
     set base_salary = #{baseSalary,jdbcType=DECIMAL},
       allowance = #{allowance,jdbcType=DECIMAL},
       bouns = #{bouns,jdbcType=DECIMAL},
       insurance = #{insurance,jdbcType=DECIMAL},
-      housing_fund = #{housingFund,jdbcType=DECIMAL}
+      housing_fund = #{housingFund,jdbcType=DECIMAL},
+      emp_id = #{empId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 
-    <select id="selectByEmpId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-        select * from tbl_salary
-        <where>
-            emp_id = #{empId,jdbcType=INTEGER}
-        </where>
-
-
-    </select>
+  <select id="selectByEmpId" parameterType="int" resultMap="BaseResultMap">
+    select * from tbl_salary
+    where emp_id = #{empId,jdbcType=INTEGER}
+  </select>
 </mapper>

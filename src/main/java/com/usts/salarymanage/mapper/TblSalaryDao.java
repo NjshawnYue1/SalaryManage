@@ -28,5 +28,5 @@ public interface TblSalaryDao {
 
     int updateByPrimaryKey(Salary record);
 
-    Salary selectByEmpId(Integer id);
+    Salary selectByEmpId(int empId);
 }

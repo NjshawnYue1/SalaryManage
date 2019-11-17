@@ -33,3 +33,5 @@ logging:
       usts:
         salarymanage:
           mapper: debug
+pagehelper:
+  reasonable: true

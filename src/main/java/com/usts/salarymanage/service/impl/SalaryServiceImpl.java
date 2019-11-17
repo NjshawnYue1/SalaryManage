@@ -40,7 +40,7 @@ public class SalaryServiceImpl implements SalaryService {
     }
 
     @Override
-    public Salary querySalary(int id) {
+    public Salary querySalaryById(int id) {
         return tblSalaryDao.selectByPrimaryKey(id);
     }
 
