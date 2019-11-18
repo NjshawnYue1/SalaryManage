@@ -25,7 +25,7 @@ import java.util.List;
  * @author GuAn
  * @version 1.0
  * @ClassName EmployeeController.java
- * @Description TODO
+ * @Description 对员工进行的相关操作
  * @createTime 2019年11月16日 12:31:00
  */
 @RestController
@@ -110,9 +110,10 @@ public class EmployeeManageController {
         return AjaxResponse.success(flag);
     }
 
-    @ApiOperation("根据职位查询员工,返回员工列表")
+    @ApiOperation("根据职位分页查询员工,返回员工列表")
     @GetMapping("/employees/careers/{careerId}")
-    public AjaxResponse selectByCareerId(@PathVariable int careerId) {
+    public AjaxResponse selectByCareerId(@PathVariable int careerId,@RequestBody Page page) {
+        PageHelper.startPage(page.getPageNum(),page.getPageSize());
         List<Employee> employeeList = employeeService.queryByCareerId(careerId);
         List<EmployeeVo> employeeVoList = new ArrayList<>();
         Iterator<Employee> iterator = employeeList.iterator();
@@ -131,13 +132,14 @@ public class EmployeeManageController {
             BeanUtil.copyProperties(employee, employeeVo);
             employeeVoList.add(employeeVo);
         }
-        return AjaxResponse.success(employeeVoList);
+        PageInfo<EmployeeVo> pageInfo = PageInfo.of(employeeVoList);
+        return AjaxResponse.success(pageInfo);
     }
 
-    @ApiOperation("根据部门查询员工列表")
+    @ApiOperation("根据部门分页查询员工列表")
     @GetMapping("/employees/departments/{departmentId}")
-    public AjaxResponse selectByDepartmentId(@PathVariable int departmentId) {
-
+    public AjaxResponse selectByDepartmentId(@PathVariable int departmentId,@RequestBody Page page) {
+        PageHelper.startPage(page.getPageNum(),page.getPageSize());
         List<Employee> employeeList = employeeService.queryByCareerId(departmentId);
         List<EmployeeVo> employeeVoList = new ArrayList<>();
         Iterator<Employee> iterator = employeeList.iterator();
@@ -157,6 +159,7 @@ public class EmployeeManageController {
             BeanUtil.copyProperties(employee, employeeVo);
             employeeVoList.add(employeeVo);
         }
-        return AjaxResponse.success(employeeVoList);
+        PageInfo<EmployeeVo> pageInfo = PageInfo.of(employeeVoList);
+        return AjaxResponse.success(pageInfo);
     }
 }

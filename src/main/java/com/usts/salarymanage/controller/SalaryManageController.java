@@ -19,7 +19,7 @@ import java.util.List;
  * @author GuAn
  * @version 1.0
  * @ClassName SalaryManageController.java
- * @Description TODO
+ * @Description 对工资进行的相关操作
  * @createTime 2019年11月17日 13:29:00
  */
 @RestController
