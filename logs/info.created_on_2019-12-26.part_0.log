@@ -1,0 +1,22 @@
+2019-12-26 21:13:37,974 [main] INFO  [com.usts.salarymanage.SalarymanageApplicationTests] StartupInfoLogger.java:55 - Starting SalarymanageApplicationTests on gadeMacBook-Pro.local with PID 34838 (started by shawnyue in /Users/shawnyue/IdeaProjects/SalaryManage)
+2019-12-26 21:13:37,976 [main] INFO  [com.usts.salarymanage.SalarymanageApplicationTests] SpringApplication.java:651 - No active profile set, falling back to default profiles: default
+2019-12-26 21:13:38,749 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:246 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-12-26 21:13:38,755 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-26 21:13:38,783 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:184 - Finished Spring Data repository scanning in 10ms. Found 0 repository interfaces.
+2019-12-26 21:13:39,310 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-26 21:13:41,198 [main] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-26 21:13:41,656 [main] INFO  [s.d.s.web.plugins.DocumentationPluginsBootstrapper] DocumentationPluginsBootstrapper.java:120 - Context refreshed
+2019-12-26 21:13:41,678 [main] INFO  [s.d.s.web.plugins.DocumentationPluginsBootstrapper] DocumentationPluginsBootstrapper.java:123 - Found 1 custom documentation plugin(s)
+2019-12-26 21:13:41,690 [main] INFO  [s.d.spring.web.scanners.ApiListingReferenceScanner] ApiListingReferenceScanner.java:41 - Scanning for api listing references
+2019-12-26 21:13:41,936 [main] INFO  [com.usts.salarymanage.SalarymanageApplicationTests] StartupInfoLogger.java:61 - Started SalarymanageApplicationTests in 4.375 seconds (JVM running for 5.382)
+2019-12-26 21:13:42,199 [main] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:110 - HikariPool-1 - Starting...
+2019-12-26 21:13:42,403 [main] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:123 - HikariPool-1 - Start completed.
+2019-12-26 21:13:42,417 [main] DEBUG [c.u.s.mapper.TblEmployeeDao.selectByDepartmentId] BaseJdbcLogger.java:159 - ==>  Preparing: select * from tbl_emp WHERE emp_department = ? 
+2019-12-26 21:13:42,447 [main] DEBUG [c.u.s.mapper.TblEmployeeDao.selectByDepartmentId] BaseJdbcLogger.java:159 - ==> Parameters: 2(Integer)
+2019-12-26 21:13:42,472 [main] DEBUG [c.u.s.mapper.TblEmployeeDao.selectByDepartmentId] BaseJdbcLogger.java:159 - <==      Total: 2
+2019-12-26 21:13:42,477 [main] DEBUG [c.u.s.mapper.TblEmployeeDao.selectByCareerId] BaseJdbcLogger.java:159 - ==>  Preparing: select * from tbl_emp WHERE emp_career = ? 
+2019-12-26 21:13:42,477 [main] DEBUG [c.u.s.mapper.TblEmployeeDao.selectByCareerId] BaseJdbcLogger.java:159 - ==> Parameters: 2(Integer)
+2019-12-26 21:13:42,479 [main] DEBUG [c.u.s.mapper.TblEmployeeDao.selectByCareerId] BaseJdbcLogger.java:159 - <==      Total: 2
+2019-12-26 21:13:42,515 [SpringContextShutdownHook] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:208 - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-26 21:13:42,520 [SpringContextShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:350 - HikariPool-1 - Shutdown initiated...
+2019-12-26 21:13:42,526 [SpringContextShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:352 - HikariPool-1 - Shutdown completed.
