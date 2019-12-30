@@ -5,7 +5,7 @@ spring:
   datasource:
     hikari:
       username: root
-      password: 123456
+      password: 951209
     url: jdbc:mysql://localhost:3306/mydb?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&useSSL=false
     driver-class-name: com.mysql.cj.jdbc.Driver
 

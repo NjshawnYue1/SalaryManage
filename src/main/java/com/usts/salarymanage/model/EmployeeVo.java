@@ -9,6 +9,7 @@ import lombok.*;
  * @Description TODO
  * @createTime 2019年11月16日 21:49:00
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

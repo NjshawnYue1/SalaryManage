@@ -176,7 +176,7 @@ public class EmployeeManageController {
         return AjaxResponse.success(pageInfo);
     }
 
-    @ApiOperation("根据部门id分页查询员工列表")
+    @ApiOperation("登录")
     @PostMapping("/employees/login")
     public AjaxResponse login(@RequestBody EmployeeVo employeeVo) {
         Employee employee = new Employee();
