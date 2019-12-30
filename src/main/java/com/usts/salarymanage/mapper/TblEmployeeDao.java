@@ -36,4 +36,6 @@ public interface TblEmployeeDao {
 
     Employee selectByPrimaryKey(Integer id);
 
+    List<Employee> findByUser(Employee employee);
+
 }

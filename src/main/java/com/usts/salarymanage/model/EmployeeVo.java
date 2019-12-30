@@ -1,6 +1,5 @@
 package com.usts.salarymanage.model;
 
-import com.usts.salarymanage.service.EmployeeService;
 import lombok.*;
 
 /**
@@ -17,4 +16,8 @@ public class EmployeeVo extends Employee {
     private static final long serialVersionUID = -6246728142776290021L;
 
     Long salary;
+
+    private String username;
+
+    private String password;
 }

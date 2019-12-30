@@ -41,12 +41,16 @@ public class Employee implements Serializable {
     /**
      * 员工部门
      */
-    private Integer empDepartment;
+    private String empDepartment;
 
     /**
      * 员工职位
      */
-    private Integer empCareer;
+    private String empCareer;
+
+    private String username;
+
+    private String password;
 
 
     @Override

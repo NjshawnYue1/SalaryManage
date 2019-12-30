@@ -68,5 +68,7 @@ public interface EmployeeService {
      */
     List<Employee> queryByDepartmentId(int departmentId);
 
+    List<Employee> findLogin(Employee employee);
+
 
 }
