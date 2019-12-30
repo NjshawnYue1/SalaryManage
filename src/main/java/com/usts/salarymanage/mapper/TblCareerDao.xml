@@ -1,244 +1,254 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.usts.salarymanage.mapper.TblCareerDao">
-  <resultMap id="BaseResultMap" type="com.usts.salarymanage.model.TblCareer">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="career_id" jdbcType="INTEGER" property="careerId" />
-    <result column="career_name" jdbcType="VARCHAR" property="careerName" />
-  </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.usts.salarymanage.model.TblCareer">
-    <result column="career_description" jdbcType="LONGVARCHAR" property="careerDescription" />
-  </resultMap>
-  <sql id="Example_Where_Clause">
-    <where>
-      <foreach collection="oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue">
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue">
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue">
-                  and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
+    <resultMap id="BaseResultMap" type="com.usts.salarymanage.model.TblCareer">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="career_id" jdbcType="INTEGER" property="careerId"/>
+        <result column="career_name" jdbcType="VARCHAR" property="careerName"/>
+    </resultMap>
+    <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.usts.salarymanage.model.TblCareer">
+        <result column="career_description" jdbcType="LONGVARCHAR" property="careerDescription"/>
+    </resultMap>
+    <sql id="Example_Where_Clause">
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
             </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Update_By_Example_Where_Clause">
-    <where>
-      <foreach collection="example.oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue">
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue">
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue">
-                  and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
             </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Base_Column_List">
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
     id, career_id, career_name
   </sql>
-  <sql id="Blob_Column_List">
+    <sql id="Blob_Column_List">
     career_description
   </sql>
-  <select id="selectByExampleWithBLOBs" parameterType="com.usts.salarymanage.model.TblCareerExample" resultMap="ResultMapWithBLOBs">
-    select
-    <if test="distinct">
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
-    from tbl_career
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null">
-      order by ${orderByClause}
-    </if>
-    <if test="limit != null">
-      <if test="offset != null">
-        limit ${offset}, ${limit}
-      </if>
-      <if test="offset == null">
-        limit ${limit}
-      </if>
-    </if>
-  </select>
-  <select id="selectByExample" parameterType="com.usts.salarymanage.model.TblCareerExample" resultMap="BaseResultMap">
-    select
-    <if test="distinct">
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
-    from tbl_career
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null">
-      order by ${orderByClause}
-    </if>
-    <if test="limit != null">
-      <if test="offset != null">
-        limit ${offset}, ${limit}
-      </if>
-      <if test="offset == null">
-        limit ${limit}
-      </if>
-    </if>
-  </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
-    select 
-    <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
-    from tbl_career
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <select id="selectByExampleWithBLOBs" parameterType="com.usts.salarymanage.model.TblCareerExample"
+            resultMap="ResultMapWithBLOBs">
+        select
+        <if test="distinct">
+            distinct
+        </if>
+        <include refid="Base_Column_List"/>
+        ,
+        <include refid="Blob_Column_List"/>
+        from tbl_career
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+        <if test="limit != null">
+            <if test="offset != null">
+                limit ${offset}, ${limit}
+            </if>
+            <if test="offset == null">
+                limit ${limit}
+            </if>
+        </if>
+    </select>
+    <select id="selectByExample" parameterType="com.usts.salarymanage.model.TblCareerExample" resultMap="BaseResultMap">
+        select
+        <if test="distinct">
+            distinct
+        </if>
+        <include refid="Base_Column_List"/>
+        from tbl_career
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+        <if test="limit != null">
+            <if test="offset != null">
+                limit ${offset}, ${limit}
+            </if>
+            <if test="offset == null">
+                limit ${limit}
+            </if>
+        </if>
+    </select>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+        select
+        <include refid="Base_Column_List"/>
+        ,
+        <include refid="Blob_Column_List"/>
+        from tbl_career
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from tbl_career
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.usts.salarymanage.model.TblCareerExample">
-    delete from tbl_career
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-  </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.usts.salarymanage.model.TblCareer" useGeneratedKeys="true">
+    <delete id="deleteByExample" parameterType="com.usts.salarymanage.model.TblCareerExample">
+        delete from tbl_career
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.usts.salarymanage.model.TblCareer"
+            useGeneratedKeys="true">
     insert into tbl_career (career_id, career_name, career_description
       )
     values (#{careerId,jdbcType=INTEGER}, #{careerName,jdbcType=VARCHAR}, #{careerDescription,jdbcType=LONGVARCHAR}
       )
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.usts.salarymanage.model.TblCareer" useGeneratedKeys="true">
-    insert into tbl_career
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="careerId != null">
-        career_id,
-      </if>
-      <if test="careerName != null">
-        career_name,
-      </if>
-      <if test="careerDescription != null">
-        career_description,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="careerId != null">
-        #{careerId,jdbcType=INTEGER},
-      </if>
-      <if test="careerName != null">
-        #{careerName,jdbcType=VARCHAR},
-      </if>
-      <if test="careerDescription != null">
-        #{careerDescription,jdbcType=LONGVARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <select id="countByExample" parameterType="com.usts.salarymanage.model.TblCareerExample" resultType="java.lang.Long">
-    select count(*) from tbl_career
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-  </select>
-  <update id="updateByExampleSelective" parameterType="map">
-    update tbl_career
-    <set>
-      <if test="record.id != null">
-        id = #{record.id,jdbcType=INTEGER},
-      </if>
-      <if test="record.careerId != null">
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.usts.salarymanage.model.TblCareer"
+            useGeneratedKeys="true">
+        insert into tbl_career
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="careerId != null">
+                career_id,
+            </if>
+            <if test="careerName != null">
+                career_name,
+            </if>
+            <if test="careerDescription != null">
+                career_description,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="careerId != null">
+                #{careerId,jdbcType=INTEGER},
+            </if>
+            <if test="careerName != null">
+                #{careerName,jdbcType=VARCHAR},
+            </if>
+            <if test="careerDescription != null">
+                #{careerDescription,jdbcType=LONGVARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <select id="countByExample" parameterType="com.usts.salarymanage.model.TblCareerExample"
+            resultType="java.lang.Long">
+        select count(*) from tbl_career
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+        update tbl_career
+        <set>
+            <if test="record.id != null">
+                id = #{record.id,jdbcType=INTEGER},
+            </if>
+            <if test="record.careerId != null">
+                career_id = #{record.careerId,jdbcType=INTEGER},
+            </if>
+            <if test="record.careerName != null">
+                career_name = #{record.careerName,jdbcType=VARCHAR},
+            </if>
+            <if test="record.careerDescription != null">
+                career_description = #{record.careerDescription,jdbcType=LONGVARCHAR},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByExampleWithBLOBs" parameterType="map">
+        update tbl_career
+        set id = #{record.id,jdbcType=INTEGER},
         career_id = #{record.careerId,jdbcType=INTEGER},
-      </if>
-      <if test="record.careerName != null">
         career_name = #{record.careerName,jdbcType=VARCHAR},
-      </if>
-      <if test="record.careerDescription != null">
-        career_description = #{record.careerDescription,jdbcType=LONGVARCHAR},
-      </if>
-    </set>
-    <if test="_parameter != null">
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByExampleWithBLOBs" parameterType="map">
-    update tbl_career
-    set id = #{record.id,jdbcType=INTEGER},
-      career_id = #{record.careerId,jdbcType=INTEGER},
-      career_name = #{record.careerName,jdbcType=VARCHAR},
-      career_description = #{record.careerDescription,jdbcType=LONGVARCHAR}
-    <if test="_parameter != null">
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByExample" parameterType="map">
-    update tbl_career
-    set id = #{record.id,jdbcType=INTEGER},
-      career_id = #{record.careerId,jdbcType=INTEGER},
-      career_name = #{record.careerName,jdbcType=VARCHAR}
-    <if test="_parameter != null">
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.usts.salarymanage.model.TblCareer">
-    update tbl_career
-    <set>
-      <if test="careerId != null">
-        career_id = #{careerId,jdbcType=INTEGER},
-      </if>
-      <if test="careerName != null">
-        career_name = #{careerName,jdbcType=VARCHAR},
-      </if>
-      <if test="careerDescription != null">
-        career_description = #{careerDescription,jdbcType=LONGVARCHAR},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.usts.salarymanage.model.TblCareer">
+        career_description = #{record.careerDescription,jdbcType=LONGVARCHAR}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map">
+        update tbl_career
+        set id = #{record.id,jdbcType=INTEGER},
+        career_id = #{record.careerId,jdbcType=INTEGER},
+        career_name = #{record.careerName,jdbcType=VARCHAR}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByPrimaryKeySelective" parameterType="com.usts.salarymanage.model.TblCareer">
+        update tbl_career
+        <set>
+            <if test="careerId != null">
+                career_id = #{careerId,jdbcType=INTEGER},
+            </if>
+            <if test="careerName != null">
+                career_name = #{careerName,jdbcType=VARCHAR},
+            </if>
+            <if test="careerDescription != null">
+                career_description = #{careerDescription,jdbcType=LONGVARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.usts.salarymanage.model.TblCareer">
     update tbl_career
     set career_id = #{careerId,jdbcType=INTEGER},
       career_name = #{careerName,jdbcType=VARCHAR},
       career_description = #{careerDescription,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.usts.salarymanage.model.TblCareer">
+    <update id="updateByPrimaryKey" parameterType="com.usts.salarymanage.model.TblCareer">
     update tbl_career
     set career_id = #{careerId,jdbcType=INTEGER},
       career_name = #{careerName,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+    <select id="findAll" resultMap="BaseResultMap">
+    select * from tbl_career
+  </select>
 </mapper>

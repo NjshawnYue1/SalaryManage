@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbook>
+    <worksheet name="sal">
+        <section startRow="0" endRow="0"/>
+        <loop startRow="1" endRow="1" items="sal" var="bean" varType="com.usts.salarymanage.model.Ware">
+            <section startRow="1" endRow="1">
+                <mapping row="1" col="0">bean.empid</mapping>
+                <mapping row="1" col="1">bean.empName</mapping>
+                <mapping row="1" col="2">bean.basesalary</mapping>
+                <mapping row="1" col="3">bean.house</mapping>
+                <mapping row="1" col="4">bean.losejob</mapping>
+                <mapping row="1" col="5">bean.ware</mapping>
+                <mapping row="1" col="6">bean.extra</mapping>
+            </section>
+            <loopbreakcondition>
+                <rowcheck offset="0">
+                    <cellcheck offset="0"></cellcheck>
+                </rowcheck>
+            </loopbreakcondition>
+        </loop>
+    </worksheet>
+</workbook>

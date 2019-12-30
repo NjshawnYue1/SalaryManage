@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.usts.salarymanage.mapper.WareDao">
+
+    <insert id="insert" parameterType="com.usts.salarymanage.model.Ware">
+      insert into ware
+      (empid,basesalary,house,losejob,ware,extra,finals,empName)
+      values (#{empid},#{basesalary},#{house},#{losejob},#{ware},#{extra},#{finals},#{empName})
+    </insert>
+
+    <select id="findAll" resultType="com.usts.salarymanage.model.Ware">
+        select * from ware
+    </select>
+
+
+</mapper>

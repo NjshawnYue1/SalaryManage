@@ -2,6 +2,7 @@ package com.usts.salarymanage.mapper;
 
 import com.usts.salarymanage.model.TblDepartment;
 import com.usts.salarymanage.model.TblDepartmentExample;
+
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -36,4 +37,6 @@ public interface TblDepartmentDao {
     int updateByPrimaryKeyWithBLOBs(TblDepartment record);
 
     int updateByPrimaryKey(TblDepartment record);
+
+    List<TblDepartment> findAll();
 }

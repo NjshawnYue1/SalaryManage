@@ -4,6 +4,7 @@ import com.usts.salarymanage.model.TblCareer;
 import com.usts.salarymanage.model.TblCareerExample;
 import java.util.List;
 
+import com.usts.salarymanage.model.TblDepartment;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.mybatis.spring.annotation.MapperScan;
@@ -37,4 +38,6 @@ public interface TblCareerDao {
     int updateByPrimaryKeyWithBLOBs(TblCareer record);
 
     int updateByPrimaryKey(TblCareer record);
+
+    List<TblCareer> findAll();
 }

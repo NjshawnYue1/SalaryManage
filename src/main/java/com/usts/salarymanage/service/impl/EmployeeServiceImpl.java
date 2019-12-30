@@ -79,4 +79,9 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
         return tblEmployeeDao.selectByDepartmentId(departmentId);
     }
+
+    @Override
+    public List<Employee> findLogin(Employee employee) {
+        return tblEmployeeDao.findByUser(employee);
+    }
 }
